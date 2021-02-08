@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
+	  <StarWorkingDirectory>$(MSBuildProjectDirectory)</StarWorkingDirectory>
+	  
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Parcial1_ap1_20180618</RootNamespace>
@@ -16,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BLL\" />
+    <None Update="GestionCiudades.Db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
