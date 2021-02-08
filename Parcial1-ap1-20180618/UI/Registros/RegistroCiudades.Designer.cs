@@ -29,6 +29,7 @@ namespace Parcial1_ap1_20180618
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.IdCiudadLabel = new System.Windows.Forms.Label();
             this.NombreLabel = new System.Windows.Forms.Label();
             this.NombreTextBox = new System.Windows.Forms.TextBox();
@@ -37,7 +38,9 @@ namespace Parcial1_ap1_20180618
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IdCiudadNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // IdCiudadLabel
@@ -80,6 +83,7 @@ namespace Parcial1_ap1_20180618
             this.BuscarButton.TabIndex = 4;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // NuevoButton
             // 
@@ -89,6 +93,7 @@ namespace Parcial1_ap1_20180618
             this.NuevoButton.TabIndex = 5;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
@@ -98,6 +103,7 @@ namespace Parcial1_ap1_20180618
             this.GuardarButton.TabIndex = 6;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
@@ -107,6 +113,11 @@ namespace Parcial1_ap1_20180618
             this.EliminarButton.TabIndex = 7;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // RegistroCiudades
             // 
@@ -124,6 +135,7 @@ namespace Parcial1_ap1_20180618
             this.Name = "RegistroCiudades";
             this.Text = "Registro de Ciudades";
             ((System.ComponentModel.ISupportInitialize)(this.IdCiudadNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +151,7 @@ namespace Parcial1_ap1_20180618
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
