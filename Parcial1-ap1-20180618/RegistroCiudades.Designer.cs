@@ -1,7 +1,7 @@
 ﻿
 namespace Parcial1_ap1_20180618
 {
-    partial class Form1
+    partial class RegistroCiudades
     {
         /// <summary>
         ///  Required designer variable.
