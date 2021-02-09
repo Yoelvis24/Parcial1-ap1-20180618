@@ -124,5 +124,34 @@ namespace Parcial1_ap1_20180618.BLL
             else
                 return Modificar(ciudades);
         }
+
+        public static bool ExisteNombre(int id, string nombre)
+        {
+            Contexto contexto = new Contexto();
+            bool encontrado = false;
+            Ciudades ciudades = Buscar(id);
+
+            try
+            {
+                encontrado = contexto.Ciudades.Any(e => e.Nombre == nombre);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            if(encontrado)
+            {
+                if (ciudades == null)
+                    return true;
+                if (ciudades.Nombre == nombre)
+                    encontrado = false;
+            }
+            return encontrado;
+        }
     }
 }

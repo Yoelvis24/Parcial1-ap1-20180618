@@ -99,13 +99,23 @@ namespace Parcial1_ap1_20180618
         { 
             Ciudades ciudades;
             bool paso = false;
+            int id = (int)IdCiudadNumericUpDown.Value;
+            string nombre = NombreTextBox.Text;
 
             if (!Validar())
                 return;
+
             ciudades = LlenarClase();
 
             if (IdCiudadNumericUpDown.Value != 0)
+            {
+                if(CiudadesBLL.ExisteNombre(id, nombre))
+                {
+                    MessageBox.Show("Esta ciudad ya existe");
+                    return;
+                }
                 paso = CiudadesBLL.Guardar(ciudades);
+            }              
             else 
             { 
                 if(!ExisteEnLaBaseDeDatos())
